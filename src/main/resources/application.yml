@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: test-azure
+  cloud:
+    azure:
+      keyvault:
+        secret:
+          enabled: true
+          property-source-enabled: true
+          property-sources:
+            -   endpoint: ${spring.cloud.azure.keyvault.secret.endpoint}
+
+logging:
+  level:
+    com:
+      azure: DEBUG
+    org:
+      springframework:
+        boot:
+          autoconfigure: DEBUG
+        core:
+          env: TRACE
